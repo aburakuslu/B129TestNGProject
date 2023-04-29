@@ -17,6 +17,13 @@ public class Day22_TestNGAnnotations {
     @AfterClass: Herbir class'tan sonra bir kez çalışır.
     @BeforeMethod: He bir @Test  annotation'ı öncesi bir kez çalışır.(JUnit @Before annotation'ı gibi)
     @AfterMethod: Her bir @Test  annotation'ı sonrası bir kez çalışır.(JUnit @After annotation'ı gibi)
+    ---------------
+    TestNG'de test method'lari alfabetik siraya gore calisir.
+    @Test(prority = 1) Test case'lerde oncelikli calistirma icin kullanilir.
+    Not: priority kullanilmayan testlerin default priority degeri 0'dir.
+    ---------------
+    @Ignore: @Test case'leri atlamak icin kullanilir.
+    @Test(enable=false) @Test caseleri kullanıma kapatmak için kullanılır.
 
      */
 
@@ -71,31 +78,39 @@ public class Day22_TestNGAnnotations {
     }
 
     @Test
-    public void test01(){
+    public void test01() {
         System.out.println("test01");
     }
+
     @Test
-    public void test02(){
+    public void test02() {
         System.out.println("test02");
     }
+
     @Test(groups = "regression test")
-    public void test03(){
+    public void test03() {
         System.out.println("test03");
     }
+
+    @Ignore
     @Test
-    public void test04(){
+    public void test04() {
+        //Calismam devam ediyor.
         System.out.println("test04");
     }
-    @Test(groups = "regression test")
-    public void test05(){
+
+    @Test(groups = "regression test", priority = 1)//En son calisir ==> Cunku diger testlerin default priority degeri 0'dir
+    public void test05() {
         System.out.println("test05");
     }
-    @Test
-    public void test06(){
+
+    @Test(priority = -1)//Ilk calisir ==> Cunku priority degeri en dusuktur.
+    public void test06() {
         System.out.println("test06");
     }
-    @Test
-    public void test07(){
+
+    @Test(enabled = false)
+    public void test07() {
         System.out.println("test07");
     }
 }
