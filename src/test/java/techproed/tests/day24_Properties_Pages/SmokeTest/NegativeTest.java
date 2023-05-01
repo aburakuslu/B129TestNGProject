@@ -21,7 +21,7 @@ public class NegativeTest {
         User with email fake@bluerentalcars.com not found
          */
 
-        Driver.getDriver().get(ConfigReader.getProperty("blueRentACarUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("blueRentalCarUrl"));
         BlueRentalPage blueRentalPage = new BlueRentalPage();
         blueRentalPage.login.click();
         blueRentalPage.email.sendKeys(ConfigReader.getProperty("fakeEmail"),
