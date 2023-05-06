@@ -7,11 +7,12 @@
                 <include name="RegressionGroup1 "  />
             </run>
         </groups>
-
+        <!--Sadece "include" olan methodlar çalışır -->
+        <!--"exclude" olan methodlar harici tüm methodlar çalışır-->
         <packages>
             <package name="techproed.*" />
         </packages>
-
+        <!-- "<package name="techproed.*" />" ==> Tüm projede "techproed" paketi altındaki tüm @Test methodlarını tarar ve "RegressionGroup1" ismi ile gruplanmış testleri çalıştırır-->
     </test>
 
 </suite>

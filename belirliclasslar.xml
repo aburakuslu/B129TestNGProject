@@ -4,7 +4,7 @@
 <suite name="Positive Login - Data Provider" verbose="1">
     <test name="Positive Login">
         <classes>
-            <class name="techproed.tests.day24_Properties_Pages.SmokeTest.PositiveTest"/>
+            <class name="techproed.tests.day24_Properties_Pages.C04_SmokeTest.PositiveTest"/>
         </classes>
     </test>
 
