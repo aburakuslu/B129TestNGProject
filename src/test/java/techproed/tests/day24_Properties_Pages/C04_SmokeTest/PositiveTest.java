@@ -2,6 +2,7 @@ package techproed.tests.day24_Properties_Pages.C04_SmokeTest;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 import techproed.pages.BlueRentalPage;
 import techproed.utilities.ConfigReader;
@@ -20,10 +21,12 @@ public class PositiveTest {
         Driver.getDriver().get(ConfigReader.getProperty("blueRentalCarUrl"));
         BlueRentalPage blueRentalPage = new BlueRentalPage();
         blueRentalPage.login.click();
+        Reporter.log("Login Tıklandı.");
         blueRentalPage.email.sendKeys(ConfigReader.getProperty("email"),
                 Keys.TAB, ConfigReader.getProperty("pass"), Keys.ENTER);
-
+        Reporter.log("Email Password girildi.");
         Assert.assertEquals(blueRentalPage.verify.getText(), "Jack Nicholson");
         Driver.closeDriver();
+        Reporter.log("Sayfa kapatıldı.");
     }
 }
