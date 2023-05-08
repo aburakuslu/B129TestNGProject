@@ -48,7 +48,7 @@ public class C04_DataProvider {
         googlePage.aramaKutusu.sendKeys(araclar, Keys.ENTER);
 
         //Her aratmadan sonra sayfa resmi alınız
-        ReusableMethods.tumSayfaResmi();
+        ReusableMethods.tumSayfaResmi(result.getName());
         ReusableMethods.bekle(2);
         Driver.closeDriver();
     }
